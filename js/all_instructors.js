@@ -13,7 +13,7 @@ function UrlExists(url){
 }
 
 function imageExist(id) {
-	var url='./img/instructors/'+id+'.png';
+	var url='/img/instructors/'+id+'.png';
 	if(UrlExists(url)){
 		return ' style="background-image:url('+url+');"';
 	}

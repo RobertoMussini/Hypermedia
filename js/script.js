@@ -105,7 +105,7 @@ $(window).ready(function(e) {
 		$('#main').html(data);
 	});
 	
-	$.getJSON('./php/page_loader.php?p='+page, function(data) {
+	$.getJSON(onlineResource+'/php/page_loader.php?p='+page, function(data) {
 		if(data!==undefined){
 			$('#page_text').html('<h1>'+data.title+'</h1><div class="underline"></div><p>'+data['text']+'</p>');
 		}
