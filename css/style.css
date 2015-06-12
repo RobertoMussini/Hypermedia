@@ -243,7 +243,6 @@ hr{
 	cursor:pointer;
 	font-size:1em;
 	overflow:hidden;
-	white-space:nowrap;
 	height:300px;
 	width:100%;
 	}
@@ -314,7 +313,7 @@ hr{
 	text-align:center;
 	border-bottom:1px solid #eee;
 	padding:5px;
-	font-size:1.5em;
+	font-size:1.1em;
 	text-transform:uppercase;
 	text-decoration:none;
 	color:#f05f40;

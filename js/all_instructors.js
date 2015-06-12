@@ -13,15 +13,15 @@ function UrlExists(url){
 }
 
 function imageExist(id) {
-	var url='/img/instructors/'+id+'.png';
+	var url=onlineResource+'/img/instructors/'+id+'.png';
 	if(UrlExists(url)){
 		return ' style="background-image:url('+url+');"';
 	}
-	url='./img/instructors/'+id+'.jpg';
+	url=onlineResource+'/img/instructors/'+id+'.jpg';
 	if(UrlExists(url)){
 		return ' style="background-image:url('+url+');"';
 	}
-	url='./img/instructors/'+id+'.jpeg';
+	url=onlineResource+'/img/instructors/'+id+'.jpeg';
 	if(UrlExists(url)){
 		return ' style="background-image:url('+url+');"';
 	}
