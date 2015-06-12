@@ -6,33 +6,55 @@
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" media="screen and (max-device-width: 480px)" href="css/mobile.css" type="text/css" />
 
 
 	<script src="js/jquery.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ6PqpAlpY7ev-DFyYg-H0g8Q5hfh76AE"></script>
 	<script src="js/wow.js"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMtecefwqqAjMmcRWVFjOuTLu9DbVtEe8"></script>
 	<script src="js/script.js"></script>
 	
 	<script>
 		new WOW().init();
+		
+		
+		var ADAPT_CONFIG = {
+		  path: 'css/',
+		  dynamic: true,
+		  range: [
+			'0px to 760px  = mobile.css'
+		  ]
+		};
 	</script>
+	<script src="js/adapt.js"></script>
 	
 </head>
 
 <body>
 	
 	<div id="menu">
-		<div id="logo">
+		<div class="vertical_aligner" id="logo">
 			MEGAGYM
 		</div>
-        <a href="index.php">home</a>
-        <a href="index.php?p=fees">fees & registration </a>
-        <a href="index.php?p=course">courses & categoties</a>
-		<a href="index.php?p=location">location</a>
-		<a href="index.php?p=instructors">our instructors</a>
-		<a href="index.php?p=schedule">schedule</a>
-        
+		<div class="vertical_aligner">
+			
+			<a href="index.html">home</a>
+			<a href="#">registration </a>
+			<a href="index.html?p=courses">courses</a>
+			<a href="index.html?p=location">location</a>
+			<a href="index.html?p=instructors">our instructors</a>
+			<a href="#">schedule</a>
+			
+			<button onclick="toggleMenu()">MENU</button>
+		</div>
+	</div>
+	
+	<div id="mobile_menu">
+		<a href="index.html" class="animated bounceInLeft">home</a>
+		<a href="#" class="animated bounceInRight">registration </a>
+		<a href="index.html?p=courses" class="animated bounceInLeft">courses</a>
+		<a href="index.html?p=location" class="animated bounceInRight">location</a>
+		<a href="index.html?p=instructors" class="animated bounceInLeft">our instructors</a>
+		<a href="#" class="animated bounceInRight">schedule</a>
 	</div>
 	
 	<div id="main"></div>
@@ -42,16 +64,24 @@
 	<div id="footer">
 		<h1><span class="fa fa-globe" style="font-size:1.2em;"></span><br />Get in touch with us!</h1>
 		<div class="underline"></div><br /><br />
-		<table align="center">
+		<center>
+		<table>
 			<tr>
 				<td><span class="fa fa-phone wow bounceIn" data-wow-delay=".1s"></span></td>
-				<td><span class="fa fa-envelope-o wow bounceIn" data-wow-delay=".1s"></span></td>
 			</tr>
 			<tr>
 				<td><a href="tel:+39 123 4567890">+39 123 4567890</a></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td><span class="fa fa-envelope-o wow bounceIn" data-wow-delay=".1s"></span></td>
+			</tr>
+			<tr>
 				<td><a href="mailto:info@megagym.com">info@megagym.com</a></td>
 			</tr>
 		</table>
+		</center>
 		<a href="index.html?p=information_form"><button class="wow tada">contact us!</button></a>
 	</div>
 

@@ -1,7 +1,12 @@
 /* CSS Document */
 
-.category_image div{
+.category_image{
 	background-color:rgba(240,95,64,0.8);
 	opacity:1;
-	font-size:1.3em;
-}
+	}
+#menu a{
+	display:none;
+	}
+#menu button{
+	display:inline;
+	}

@@ -1,6 +1,8 @@
 // JavaScript Document
 var onlineResource='http://www.nikestudio.altervista.org';
+//var onlineResource='.';
 var courseLevelName=['all levels', 'beginner', 'intermediate', 'advanced'];
+var menuOn=false;
 
 
 function getUrlParameter(sParam)
@@ -18,10 +20,29 @@ function getUrlParameter(sParam)
 }
 
 
+function toggleMenu(ctr){
+	if(!menuOn && ctr!==false){
+		$('#mobile_menu a').removeClass('bounceOutLeft');
+		$('#mobile_menu a').removeClass('bounceOutRight');
+		$('#mobile_menu').show();
+		menuOn=true;
+	}else if(menuOn){
+		$('#mobile_menu a').each(function() {
+			if($(this).hasClass('bounceInLeft'))
+				$(this).addClass('bounceOutLeft');
+			else
+				$(this).addClass('bounceOutRight');
+		});
+		setTimeout(function(){$('#mobile_menu').hide();},500);
+		menuOn=false;
+	}
+}
+
 control=0;
 $( window ).scroll(function() {
 	var sc=$(window).scrollTop();
 	
+	toggleMenu(false);
 
 	if(sc>60 && control==0){
 		$('#menu').stop().animate({
@@ -77,11 +98,17 @@ $(window).ready(function(e) {
 	});
 	
 	var page = getUrlParameter('p');
-	if(page==undefined)
+	if(page===undefined)
 		page="home";
 	
 	$.get('./pages/'+page+'.html', function(data) {
 		$('#main').html(data);
+	});
+	
+	$.getJSON('./php/page_loader.php?p='+page, function(data) {
+		if(data!==undefined){
+			$('#page_text').html('<h1>'+data.title+'</h1><div class="underline"></div><p>'+data['text']+'</p>');
+		}
 	});
 	
 });
