@@ -1,0 +1,22 @@
+<script src="js/all_instructors.js"></script>
+<script>
+	var course = getUrlParameter('course');
+	$(window).ready(function(e) {
+		$.get(onlineResource+'/php/courses.php?course='+course, function(h) {
+			$('#content_container').html(h);
+		});
+		
+	});
+	
+	getData('instructors_of_course&course='+course,'content_container_heldby');
+</script>
+
+
+<div class="coloredBlock" style="padding-bottom:0px;">
+<div id="content_container" style="margin-bottom:-40px;"></div>
+<a href="index.html?p=all_courses"><button class="justAButton">all courses</button></a><hr />
+</div><div class="normalBlock">
+<h1>Staff</h1>
+<div class="underline"></div><hr />
+<div id="content_container_heldby"></div>
+</div>

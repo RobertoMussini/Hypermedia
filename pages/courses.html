@@ -1,0 +1,22 @@
+<script>
+	$(window).ready(function(e) {
+		$.get(onlineResource+'/php/courses.php?home=yes', function(h) {
+			$('#content_container').html(h);
+		});
+		
+	});
+</script>
+
+<div class="normalBlock" style="padding-bottom:0px;">
+	<h1>Welcome to our courses!</h1>
+	<div class="underline"></div>
+	<p>
+		Where our only goal is to help you realize yours. Join your nearest MegaGym today to get stronger with every workout, every training session and every class.
+	</p>
+	<hr />
+	<a href="index.html?p=all_courses"><button class="justAButton wow bounceIn">View all courses</button></a>
+	
+	<hr><hr />
+	
+	<div id="content_container"></div>	
+</div>
