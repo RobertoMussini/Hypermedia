@@ -7,11 +7,18 @@
 	if(isset($_GET['home']) && $_GET['home']=='yes'){
 		$categories=$sql->estrai("categories");
 		$c=0;
+		echo('<table cellpadding="0" cellspacing="0" id="category_image_table"><tr>');
 		foreach($categories as $k=>$v){
 			$imgurl=str_replace(' ','%20',$v['name']);
-			echo('<a href="index.html?p=course_category&category='.$v['id'].'"><div class="category_image" style="background-image:url(./img/course%20categories/'.$imgurl.'.jpg);"><div>'.ucwords($v['name']).'</div></div></a>');
+			echo('<td style="background-image:url(./img/course%20categories/'.$imgurl.'.jpg);">
+				<a href="index.html?p=course_category&category='.$v['id'].'"><div class="category_image"><div>'.ucwords($v['name']).'</div></div></a>
+			</td>');
+			if($c==2){
+				echo('</tr><tr>');
+			}
 			$c++;
 		}
+		echo('</tr></table>');
 		
 		
 		

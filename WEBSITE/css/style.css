@@ -14,21 +14,29 @@ body,html{
 	background:#222;
 	position:fixed;
 	top:0px;
-	padding-top:12px;
-	padding-bottom:12px;
 	width:100%;
 	text-align:right;
 	z-index:10;
 	font-size:0.7em;
 	border-bottom:1px solid #000;
+	height:50px;
+	display:table;
+	}
+.vertical_aligner{
+	display:table-cell;
+	vertical-align:middle;
 	}
 #menu a{
 	margin-right:20px;
 	text-decoration:none;
 	color:#f05f40;
-	-webkit-transition: color 0.1s; /* Safari */
+	-webkit-transition: color 0.2s; /* Safari */
 	transition: color 0.2s;
 	text-transform:uppercase;
+	}
+#menu button{
+	display:none;
+	margin-right:20px;
 	}
 #menu a:hover{
 	color:#fff;
@@ -39,8 +47,8 @@ body,html{
 
 #menu #logo{
 	color:#fff;
-	float:left;
-	margin-left:20px;
+	text-align:left;
+	padding-left:20px;
 	}
 
 #main{
@@ -179,7 +187,6 @@ button:hover, input[type="submit"]:hover{
 	background-color:#222;
 	}
 #footer button{
-	margin-top:40px;
 	background-color:#222;
 	color:#fff;
 	}
@@ -215,33 +222,38 @@ hr{
 	height:50px;
 	}
 	
-	
-.category_image{
-	display:inline-table;
-	margin:0px;
-	width:calc(100% / 3);
-	height:250px;
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center;
+
+#category_image_table{
+	width:100%;
+	height:600px;
 	table-layout:fixed;
 	}
-.category_image div{
+#category_image_table td{
+	background-size:cover;
+	background-position:center;
+	overflow:hidden;
+	}
+.category_image{
 	color:#fff;
 	background-color:#f05f40;
-	display:table-cell;
-	vertical-align:middle;
+	display:table;
 	opacity:0;
 	background-color:rgba(240,95,64,0);
     transition:opacity 0.4s;
 	cursor:pointer;
-	font-size:1.1em;
+	font-size:1em;
 	overflow:hidden;
 	white-space:nowrap;
+	height:300px;
+	width:100%;
 	}
-.category_image div:hover{
+.category_image:hover{
 	background-color:rgba(240,95,64,0.8);
 	opacity:1;
+	}
+.category_image div{
+	vertical-align:middle;
+	display:table-cell;
 	}
 	
 .courses_table{
@@ -273,16 +285,47 @@ hr{
 .form_container{
 	width:80%;
 	text-align:center;
-}
+	}
 .form_container textarea{
 	height:200px;
-}
+	}
 .form_container textarea, .form_container input[type="text"]{
 	width:100%;
 	margin:-12px;
 	padding:12px;
-}
+	}
 .form_container_td{
 	width:50%;
 	padding:24px;
 	}
+	
+	
+#mobile_menu{
+	display:block;
+	position:fixed;
+	top:51px;
+	width:100%;
+	z-index:10;
+	display:none;
+}
+#mobile_menu a{
+	display:block;
+	background-color:#fff;
+	text-align:center;
+	border-bottom:1px solid #eee;
+	padding:5px;
+	font-size:1.5em;
+	text-transform:uppercase;
+	text-decoration:none;
+	color:#f05f40;
+	-webkit-transition: color 0.2s, background-color 0.2s; /* Safari */
+	transition: color 0.2s, background-color 0.2s;}
+#mobile_menu a:hover{
+	background-color:#f05f40;
+	color:#fff;}
+	
+#footer table{
+	text-align:center;
+	display:inline-table;
+	margin-bottom:50px;
+}

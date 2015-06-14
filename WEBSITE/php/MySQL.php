@@ -4,10 +4,10 @@ class MysqlClass{
 	
 	
 	
-	private $nomehost = "localhost";     
-	private $nomeuser = "root";          
-	private $password = "root";
-	private $nomedb = "Hypermedia";		
+	private $nomehost = "";     
+	private $nomeuser = "";          
+	private $password = "";
+	private $nomedb = "my_nikestudio";		
 	
 	
 	
